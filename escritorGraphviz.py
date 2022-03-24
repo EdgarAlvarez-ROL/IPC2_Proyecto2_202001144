@@ -71,7 +71,8 @@ def escritorLabel(letras, filas, columnas):
         text += '<TR>'
         # filasL = ((len(letras))/2)
         for y in range(columnas):
-            
+            if contador >= filas:
+                break
             for cosas in letras[contador]:
                 text +='<TD'
                 if cosas == '*':
@@ -93,6 +94,7 @@ def escritorLabel(letras, filas, columnas):
 
             # if letras[contador] == 'B':
             #     text+= ' BGCOLOR="black"'
+            # contador +=1
             break
         contador+=1
         text += '</TR>' 
