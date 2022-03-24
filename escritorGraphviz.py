@@ -84,6 +84,8 @@ def escritorLabel(letras, filas, columnas):
                     text += ' BGCOLOR="blue"'
                 elif cosas == 'R':
                     text += ' BGCOLOR="gray"'
+                elif cosas == 'M':
+                    text += ' BGCOLOR="red"'
                 
                 text += '>'+ cosas +'</TD>'
 

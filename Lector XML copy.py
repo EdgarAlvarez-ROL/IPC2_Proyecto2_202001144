@@ -12,7 +12,7 @@ from tkinter import filedialog
 import re
 import xml.etree.ElementTree as ET
 
-# import escritorGraphviz
+import escritorGraphviz
 
 
 # VARIABLES GLOBALES
@@ -177,7 +177,7 @@ def mainQ():
             for pa in cods:
                 if pa == codUsar:
                     codEntrada = (cods[solo+1])
-                    # escritorGraphviz.crearGraficoEntrada(str(cods[solo+1]), int(obtenerDatosPiso[1]), int(obtenerDatosPiso[2]))
+                    escritorGraphviz.crearGraficoEntrada(str(cods[solo+1]), int(obtenerDatosPiso[1]), int(obtenerDatosPiso[2]))
                     break
                 solo += 1
             
@@ -188,7 +188,7 @@ def mainQ():
             for pa in cods:
                 if pa == codCamb:
                     codSalida = (cods[solo+1])
-                    # escritorGraphviz.crearGraficoSalida(str(cods[solo+1]), int(obtenerDatosPiso[1]), int(obtenerDatosPiso[2]))
+                    escritorGraphviz.crearGraficoSalida(str(cods[solo+1]), int(obtenerDatosPiso[1]), int(obtenerDatosPiso[2]))
                     break
                 solo += 1
 
