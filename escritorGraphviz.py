@@ -57,7 +57,7 @@ def crearGraficoEntrada(letras, filas, columnas):
 
 
     # print(dot.source)  
-    dot.render('test-output/patronEntrada.gv', view=True)
+    dot.render('test-output/graphCiudad.gv', view=True)
 
 
 
