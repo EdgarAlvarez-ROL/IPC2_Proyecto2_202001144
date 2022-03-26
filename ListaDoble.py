@@ -144,7 +144,7 @@ class Ciudad:
                     apuntador = apuntador.siguiente
         
         def return_dataD(self):
-            data = 'CUA'
+            data = ''
             if self.root is None:
                 print("La lista esta vacia")
                 return
@@ -152,9 +152,9 @@ class Ciudad:
                 apuntador = self.root
                 while apuntador is not None:
                     # data += str(apuntador.elemento.getFilas()) + "Y"
-                    data += str(apuntador.elemento.getFila()) + "Y"
-                    data += str(apuntador.elemento.getColumna()) + "Y"
-                    data += str(apuntador.elemento.getCapacidad()) + "Y"
+                    data += str(apuntador.elemento.getFila()) + "S"
+                    data += str(apuntador.elemento.getColumna()) + "S"
+                    data += str(apuntador.elemento.getCapacidad()) + "S"
                     apuntador = apuntador.siguiente
             return data
 
