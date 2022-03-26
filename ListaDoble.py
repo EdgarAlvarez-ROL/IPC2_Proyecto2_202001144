@@ -15,29 +15,40 @@ class unidadMilitar:
     
     def getFila(self):
         return self.fila
+    
+    def getColumna(self):
+        return self.columna
+
+    def getCapacidad(self):
+        return self.capacidad
 
 
 
 class Ciudad:
-    def __init__(self, nombre, filas, columnas, todo_papa):
+    def __init__(self, nombre, filas, columnas, todo_papa, listRobots):
         self.nombre = nombre
         self.filas = filas
         self.columnas = columnas
         self.todo_papa = todo_papa
+        self.listRobots = Ciudad.lista_Militares()
 
     def getNombre(self):
-            return self.nombre
+        return self.nombre
 
     def getFilas(self):
-            return self.filas
+        return self.filas
 
     def getColumnas(self):
-            return self.columnas
+        return self.columnas
 
     def getTodo_papa(self):
-            return self.todo_papa
+        return self.todo_papa
 
-    
+    def getListaRobots(self):
+        rR = (self.listRobots.return_dataD())
+        return rR
+
+
 
 
 
@@ -127,18 +138,25 @@ class Ciudad:
             else:
                 apuntador = self.root
                 while apuntador is not None:
-                    print(apuntador.elemento, " ")
+                    print('Fila: ',apuntador.elemento.getFila(), " ")
+                    print('Columna: ',apuntador.elemento.getColumna(), " ")
+                    print('Capacidad: ',apuntador.elemento.getCapacidad(), " ")
                     apuntador = apuntador.siguiente
         
-        def return_lista(self):
+        def return_dataD(self):
+            data = 'CUA'
             if self.root is None:
                 print("La lista esta vacia")
                 return
             else:
                 apuntador = self.root
                 while apuntador is not None:
-                    print(apuntador.elemento.getFila(), " ")
+                    # data += str(apuntador.elemento.getFilas()) + "Y"
+                    data += str(apuntador.elemento.getFila()) + "Y"
+                    data += str(apuntador.elemento.getColumna()) + "Y"
+                    data += str(apuntador.elemento.getCapacidad()) + "Y"
                     apuntador = apuntador.siguiente
+            return data
 
         def lista_vacia(self):
             if self.root is None:
@@ -323,6 +341,8 @@ class doubleList:
                     print(apuntador.elemento.getColumnas(), " ")
                 elif numero == 4:
                     print(apuntador.elemento.getTodo_papa(), " ")
+                elif numero == 5:
+                    print(apuntador.elemento.getListaRobots(), " ")
                 # print(apuntador.elemento, " ")
                 apuntador = apuntador.siguiente
                 # break
@@ -345,6 +365,8 @@ class doubleList:
                     data += str(apuntador.elemento.getColumnas()) + " "
                 elif numero == 4:
                     data += str(apuntador.elemento.getTodo_papa()) + " "
+                elif numero == 5:
+                    data += str(apuntador.elemento.getListaRobots()) + " "
                 # print(apuntador.elemento, " ")
                 apuntador = apuntador.siguiente
                 # break
@@ -363,6 +385,7 @@ class doubleList:
                     data += str(apuntador.elemento.getFilas()) + "Y"
                     data += str(apuntador.elemento.getColumnas()) + "Y"                
                     data += str(apuntador.elemento.getTodo_papa()) + "Y"
+                    data += str(apuntador.elemento.getListaRobots()) + "Y"
                 # print(apuntador.elemento, " ")
                 apuntador = apuntador.siguiente
                 # break
