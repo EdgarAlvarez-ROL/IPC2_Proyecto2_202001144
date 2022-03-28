@@ -6,27 +6,9 @@ class node:
     def __init__(self, data = None, siguiente = None, nodoHijin = None): #Constructor
         self.data = data #Este el atributo, puede mas atributo
         self.siguiente = siguiente  #Apunta al siguiente nodo
-        # self.nodoHijin = nodoHijin
+        self.nodoHijin = nodoHijin
 
-class u_Militar:
-    def __init__(self, fila, columna, capacidad) -> None:
-        self.fila =  fila
-        self.columna = columna
-        self.capacidad = capacidad
 
-class u_Recurso:
-    def __init__(self, fila, columna) -> None:
-        self.fila =  fila
-        self.columna = columna
-
-class u_Civil:
-    def __init__(self, fila, columna) -> None:
-        self.fila = fila
-        self.columna = columna
-
-class u_Rescatador:
-    def __init__(self, capacidad) -> None:
-        self.capacidad = capacidad
 
 
 class nodoHJjo:
@@ -231,47 +213,4 @@ class lista_simple:
 
         return x
 
-    class texto_Ciudades: 
-        def __init__(self): # constructor
-            self.root = None # root es el primer apuntador
-
-
-        def insertar_inicio(self, data):
-            self.root = node(data=data, siguiente=self.root)  
-
-
-        def insertar_fin(self, midato): 
-
-            if self.root is None: 
-                self.root = node(data=midato) 
-                return 
-
-            auxRoot = self.root
-            while auxRoot.siguiente: 
-                auxRoot = auxRoot.siguiente
-            auxRoot.siguiente = node(data=midato) 
-
-
-        def imprimir_lista( self ):
-            nodeAux = self.root 
-            while nodeAux != None:
-                print('Nodo: ',nodeAux.data)
-                nodeAux = nodeAux.siguiente
-
-        def vaciar_lista(self):
-            nodeAux = self.root 
-            while nodeAux != None:
-                nodeAux.data = ''
-                nodeAux = nodeAux.siguiente
-            print('\nLista Vaciada correctamente\n')
-
-
-        def return_data(self):
-            nodeAux = self.root
-            text = ''
-            while nodeAux != None:
-                text+=nodeAux.data
-                nodeAux = nodeAux.siguiente
-            
-            return text
 
