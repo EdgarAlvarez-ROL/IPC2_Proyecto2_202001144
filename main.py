@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 
 import ListaDoble
 import escritorGraphviz
-
+import purebas2
 
 ciudadx = ListaDoble.Ciudad('','','','','')
 listaCiudades = ListaDoble.doubleList()
@@ -72,6 +72,7 @@ def lectorXML(rutanueva):
 
             
             unidadesTexto = divisorMapeador(todo_papa)
+            # print(unidadesTexto)
             nuevaCadena = ''
             for unidades in x.getElementsByTagName('unidadMilitar'):
                 n_u_fila = unidades.getAttribute('fila')
@@ -266,6 +267,8 @@ def menu():
             """"""
             # escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
             """"""
+           
+
             
 
             # SECCION ROBOTS:
@@ -300,7 +303,7 @@ def menu():
 
 
             cont = 0
-            nCiud = input("ingrese el su robot de rescate: ")
+            nCiud = input("ingrese el su robot: ")
             capacidad_rR = ''
             for x in dif_robots:
                 if cont == int(nCiud):
