@@ -14,8 +14,8 @@ from pathfinding.finder.a_star import AStarFinder
 matrix = []
 x = 0
 y = 0
-# start = grid.node(0, 0)
-# end = grid.node(3, 0)
+
+
 
 def hacerMatrix(todo_papa, end, start):
   global matrix
@@ -56,3 +56,8 @@ def usar():
   path, runs = finder.find_path(start, end, grid)
   print('operations:', runs, 'path length:', len(path))
   print(grid.grid_str(path=path, start=start, end=end))
+
+
+
+
+  usar()

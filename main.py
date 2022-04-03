@@ -265,12 +265,12 @@ def menu():
             # print(unidadesTexto)
             # unidadesTexto = list_unidadesTexto[nCiud]
             """"""
-            # escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
+            escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
             """"""
            
-
+            buscarEntradas(todo_papa)
             
-
+            """
             # SECCION ROBOTS:
             tiposRobots = listaRobots.return_infoEspecifica_ROBOTS(1)
             list_tRbts = (tiposRobots).rstrip().split(' ')
@@ -280,7 +280,7 @@ def menu():
                 cont += 1
 
             cont = 0
-            nCiud = input("ingrese el numero del robot: ")
+            nCiud = input("ingrese el # del Tipo de Robot: ")
             dif_robots = ''
             for x in list_tRbts:
                 if cont == int(nCiud):
@@ -303,7 +303,6 @@ def menu():
 
 
             cont = 0
-            nCiud = input("ingrese el su robot: ")
             capacidad_rR = ''
             for x in dif_robots:
                 if cont == int(nCiud):
@@ -311,8 +310,8 @@ def menu():
                     # listicaRobot = 
                 cont += 1
 
-            print(capacidad_rR)
-
+            print('Capacidad: '+capacidad_rR)
+            """
 
             
         elif opcion == 3:
@@ -341,6 +340,46 @@ def pedirNumeroEntero():
             print('ERROR, introduce un numero entero: ')
     
     return num
+
+
+
+
+
+def buscarEntradas(todo_papa):
+    x = 0
+    y = 0
+    xcua = 0
+    ycua = 0
+    for cosas in todo_papa:
+        for xi in cosas:
+            if xi == '*':
+                pass
+            elif xi == ' ':
+                pass
+            elif xi == 'M':
+                pass
+            elif xi == 'R':
+                pass
+            elif xi == 'E':
+                xcua = x
+                ycua = y
+          
+                print('Entradas: '+ xi)  
+                print('x: '+str(xcua)+' y: '+str(ycua))
+
+                xcua = 0
+                ycua = 0
+            elif xi == 'C':
+                pass
+            else:
+                x += 1
+        y += 1
+
+        
+    return xcua, ycua
+
+
+
 
 
 
