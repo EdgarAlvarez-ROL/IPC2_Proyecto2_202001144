@@ -265,12 +265,11 @@ def menu():
             # print(unidadesTexto)
             # unidadesTexto = list_unidadesTexto[nCiud]
             """"""
-            escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
+            # escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
             """"""
-           
-            buscarEntradas(todo_papa)
+   
             
-            """
+            """"""
             # SECCION ROBOTS:
             tiposRobots = listaRobots.return_infoEspecifica_ROBOTS(1)
             list_tRbts = (tiposRobots).rstrip().split(' ')
@@ -279,13 +278,27 @@ def menu():
                 print(str(cont) + ') ' + str(x))
                 cont += 1
 
+
+
             cont = 0
             nCiud = input("ingrese el # del Tipo de Robot: ")
+            parC = ''
             dif_robots = ''
             for x in list_tRbts:
                 if cont == int(nCiud):
                     dif_robots = listaRobots.return_Data_ROBOT(x)
-                    # listicaRobot = 
+
+
+                    if int(nCiud) % 2 == 0:
+                        # print("par")
+                        parC = 'par'
+                    else:
+                        # print("impar")
+                        parC = 'impar'
+                    
+
+
+
                 cont += 1
 
 
@@ -303,6 +316,7 @@ def menu():
 
 
             cont = 0
+            nCiud = input("Ingrese el numero de su Robot: ")
             capacidad_rR = ''
             for x in dif_robots:
                 if cont == int(nCiud):
@@ -310,8 +324,39 @@ def menu():
                     # listicaRobot = 
                 cont += 1
 
-            print('Capacidad: '+capacidad_rR)
-            """
+            print('Capacidad de su ROBOT: '+capacidad_rR)
+            print('')
+            """"""
+            """"""
+            """"""
+            #Entrada     
+            buscarEntradas(todo_papa)
+            print('')
+
+            print('Ingrese las Coordenas de la Entrada: ')
+            xEntrada = input("ingrese x: ")
+            yEntrada = input("ingrese y: ")
+            print('')
+            # Fighter o Salvador
+            if parC == 'par':
+                # enviar capacidad_rR
+                print()
+            elif parC == 'impar':
+                # enviar capacidad_rR con 0
+                buscarCiviles(todo_papa)
+                print('Ingrese las Coordenas del Civil a rescatar: ')
+                xCivil = input("ingrese x: ")
+                yCivil = input("ingrese y: ")
+                print('')
+                # envio entradas x & y tambien enviar final xcivli, xcivil
+                # xEntrada = int(xEntrada)
+                # yEntrada = int(yEntrada)
+                # xCivil = int(xCivil)
+                # yCivil = int(yCivil)
+
+                purebas2.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil)
+
+
 
             
         elif opcion == 3:
@@ -351,6 +396,7 @@ def buscarEntradas(todo_papa):
     xcua = 0
     ycua = 0
     for cosas in todo_papa:
+        
         for xi in cosas:
             if xi == '*':
                 pass
@@ -367,18 +413,49 @@ def buscarEntradas(todo_papa):
                 print('Entradas: '+ xi)  
                 print('x: '+str(xcua)+' y: '+str(ycua))
 
-                xcua = 0
-                ycua = 0
+                x+=1
             elif xi == 'C':
                 pass
-            else:
-                x += 1
+            x += 1
+        x=0       
         y += 1
 
         
-    return xcua, ycua
 
 
+def buscarCiviles(todo_papa):
+    x = 0
+    y = 0
+    xcua = 0
+    ycua = 0
+    for cosas in todo_papa:
+        
+        for xi in cosas:
+            if xi == '*':
+                pass
+            elif xi == ' ':
+                pass
+            elif xi == 'M':
+                pass
+            elif xi == 'R':
+                pass
+            elif xi == 'E':
+                pass
+            elif xi == 'C':
+                xcua = x
+                ycua = y
+          
+                print('CIVILES: '+ xi)  
+                print('x: '+str(xcua)+' y: '+str(ycua))
+
+                x+=1
+
+
+            x += 1
+        x=0       
+        y += 1
+
+     
 
 
 

@@ -17,7 +17,7 @@ y = 0
 
 
 
-def hacerMatrix(todo_papa, end, start):
+def hacerMatrix(todo_papa, xEntrada, yEntrada, xFinaL, yFinal):
   global matrix
   matrix = []
   temp = []
@@ -41,23 +41,26 @@ def hacerMatrix(todo_papa, end, start):
     temp = []
 
   # print(matrix)
+  a = int(xEntrada)
+  b = int(yEntrada)
+  c = int(xFinaL)
+  d = int(yFinal)
+  
+  usar(a,b,c,d)
 
-  usar()
 
 
-
-def usar():
-  global matrix, x, y
+def usar(xEntradau, yEntradau, xFinalu, yFinalu):
+  global matrix
   grid = Grid(matrix=matrix)
-  start = grid.node(0, 0)
-  end = grid.node(3, 0)
-  # h = horizontalMovement.always
+
+  start = grid.node(xEntradau, yEntradau)
+  end = grid.node(xFinalu, yFinalu)
+
   finder = AStarFinder(diagonal_movement=DiagonalMovement.always)
   path, runs = finder.find_path(start, end, grid)
+
   print('operations:', runs, 'path length:', len(path))
   print(grid.grid_str(path=path, start=start, end=end))
 
-
-
-
-  usar()
+  # print(drod)
