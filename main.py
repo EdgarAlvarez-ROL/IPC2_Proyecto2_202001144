@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 
 import ListaDoble
 import escritorGraphviz
-import purebas2
+import algoritmo
 
 ciudadx = ListaDoble.Ciudad('','','','','')
 listaCiudades = ListaDoble.doubleList()
@@ -354,7 +354,7 @@ def menu():
                 # xCivil = int(xCivil)
                 # yCivil = int(yCivil)
 
-                purebas2.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil)
+                algoritmo.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil)
 
 
 

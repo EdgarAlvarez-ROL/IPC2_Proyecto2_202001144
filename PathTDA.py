@@ -82,33 +82,33 @@ def Casilla(x,y):
     # //TIPO (obstáculo=1, vacío=0)
     tipo = 0
 
-    var aleatorio = Math.floor(Math.random()*5);  // 0-4
-    if(aleatorio == 1)
-        this.tipo = 1;
+    aleatorio = Math.floor(Math.random()*5) #  // 0-4
+    if(aleatorio == 1):
+      tipo = 1
 
-    //PESOS
-    this.f = 0;  //coste total (g+h)
-    this.g = 0;  //pasos dados
-    this.h = 0;  //heurística (estimación de lo que queda)
+    # //PESOS
+    f = 0  #//coste total (g+h)
+    g = 0 # //pasos dados
+    h = 0 # //heurística (estimación de lo que queda)
 
-    this.vecinos = [];
-    this.padre = null;
+    vecinos = []
+    padre = null
 
 
-    //MÉTODO QUE CALCULA SUS VECNIOS
-    this.addVecinos = function(){
-        if(this.x > 0)
-        this.vecinos.push(escenario[this.y][this.x-1]);   //vecino izquierdo
+    # //MÉTODO QUE CALCULA SUS VECNIOS
+    addVecinos = def cua():
+        if(x > 0)
+        vecinos.push(escenario[y][x-1])   #//vecino izquierdo
 
-        if(this.x < filas-1)
-        this.vecinos.push(escenario[this.y][this.x+1]);   //vecino derecho
+        if(x < filas-1)
+        vecinos.push(escenario[y][x+1])   #//vecino derecho
 
-        if(this.y > 0)
-        this.vecinos.push(escenario[this.y-1][this.x]);   //vecino de arriba
+        if(y > 0)
+        vecinos.push(escenario[y-1][x])   #//vecino de arriba
 
-        if(this.y < columnas-1)
-        this.vecinos.push(escenario[this.y+1][this.x]); //vecino de abajo
-    }
+        if(y < columnas-1)
+        vecinos.push(escenario[y+1][x]) #//vecino de abajo
+    
 
 
 
