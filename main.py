@@ -3,7 +3,7 @@ from queue import PriorityQueue
 from xml.dom import minidom
 from numpy import TooHardError, delete
 
-from sqlalchemy import null                     # Importamos la libreria
+from sqlalchemy import null                     
 
 import tkinter
 from tkinter import filedialog
@@ -62,15 +62,12 @@ def lectorXML(rutanueva):
                 contF += 1
             # print(todo_papa)
             
-
-
             # e_fila = x.getElementsByTagName('fila')[0]
             # n_fila = e_fila.getAttribute('numero')
             # print('# Fila: ' + n_fila)
             # d_fila = e_fila.childNodes[0].data
             # print(e_fila.nodeName, ':', str(d_fila))
 
-            
             unidadesTexto = divisorMapeador(todo_papa)
             # print(unidadesTexto)
             nuevaCadena = ''
@@ -85,10 +82,6 @@ def lectorXML(rutanueva):
                 militar.capacidad = unidades.childNodes[0].data
                 listMilitares.insertar_final(militar)
                 militar = ListaDoble.unidadMilitar('','','')
-
-                """ESTO VA EN OPCION 2 CREO"""
-                """PÁSAR A LA OPCINO 2 WE"""
-                
 
                 
                 cont = 0
@@ -332,11 +325,11 @@ def menu():
             #Entrada     
             buscarEntradas(todo_papa)
             print('')
-
             print('Ingrese las Coordenas de la Entrada: ')
             xEntrada = input("ingrese x: ")
             yEntrada = input("ingrese y: ")
             print('')
+
             # Fighter o Salvador
             if parC == 'par':
                 # enviar capacidad_rR
@@ -354,7 +347,7 @@ def menu():
                 # xCivil = int(xCivil)
                 # yCivil = int(yCivil)
 
-                algoritmo.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil)
+                algoritmo.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil, filas , columnas)
 
 
 
