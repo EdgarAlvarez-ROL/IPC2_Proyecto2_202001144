@@ -290,11 +290,103 @@ def hacerMatrix2(todo_papa, xEntrada, yEntrada, xFinaL, yFinal, filas, columnas)
                 trra += "1 "
             elif x == 'C':
                 x = 0
-                trra += "0 "
+                trra += "1 "
             # temp.append(x)
             cuaT[contador] = trra.rstrip()
             # cuaT[contador]
 
+        # print(cuaT[contador])
+        contador += 1
+
+        trra = ''
+       
+
+    #   matrix.append(temp)
+    #   temp = []
+
+    # print(matrix)
+    contador = 0
+    for cosas in cuaT:
+        temp = cosas.split(' ') 
+        cuaT2[contador] = temp
+        contador += 1
+    
+    # print(cuaT2)
+    a = int(xEntrada)
+    b = int(yEntrada)
+    c = int(xFinaL)
+    d = int(yFinal)
+
+    usar(cuaT2, a,b,c,d,filas,columnas)
+
+
+
+
+def hacerMatrix3(todo_papa, xEntrada, yEntrada, xFinaL, yFinal, filas, columnas, listicaMilitares, capacidad_rR):
+    global listaMatrix
+    
+    # listatemp = doubleList()
+    # matrix = []
+    cuaT = todo_papa
+    cuaT2 = todo_papa
+    trra = ''
+    # temp = []
+    contador = 0
+
+    suax = 0
+    suay = 0
+    cont = 0
+    sua1 = 0
+    sua2 = 0
+    for cosas in todo_papa:
+        for x in cosas:
+            if x == '*':
+                x = 0
+                trra += "0 "
+            elif x == ' ':
+                x = 1
+                trra += "1 "
+            elif x == 'M':
+                for pa in listicaMilitares:
+                    if cont == 0:
+                        if suay == int(pa):
+                            sua1 = 1
+                        cont +=1
+                    elif cont == 1:
+                        if suax == int(pa):
+                            sua2 = 1
+                        cont +=1
+                    elif cont == 2:
+                        if sua1 == 1 and sua2 == 1 and int(pa) < capacidad_rR:
+                            trra += "1 "
+                        else:
+                            trra += "0 "
+
+                            
+                        cont = 0
+                    
+
+                    
+
+                    
+                    
+                # x = 1
+                
+            elif x == 'R':
+                x = 1
+                trra += "1 "
+            elif x == 'E':
+                x = 1
+                trra += "1 "
+            elif x == 'C':
+                x = 1
+                trra += "1 "
+            suax += 1
+            # temp.append(x)
+            cuaT[contador] = trra.rstrip()
+            # cuaT[contador]
+        suay += 1
+        suax = 0
         # print(cuaT[contador])
         contador += 1
 
@@ -350,7 +442,7 @@ def usar(matrix, xEntradau, yEntradau, xFinalu, yFinalu, filas, columnas):
 
     # print(letters)
     if len(path) == 0:
-        print('No se pudo rescatar al Civil -F')
+        print('No se pudo rescatar -F')
     pathGraficador.crearGraficoEntrada(letters,filas,columnas)
 
 

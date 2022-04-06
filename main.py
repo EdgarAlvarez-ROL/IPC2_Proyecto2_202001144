@@ -261,7 +261,7 @@ def menu():
             # print(unidadesTexto)
             # unidadesTexto = list_unidadesTexto[nCiud]
             """"""
-            # escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
+            escritorGraphviz.crearGraficoEntrada(todo_papa,(filas),(columnas))
             """"""
    
             
@@ -348,6 +348,33 @@ def menu():
 
                 else:
                     print('NO')
+                    algoritmo.hacerMatrix3(todo_papa, xEntrada, yEntrada, xRecurso, yRecurso, filas , columnas, listicaMilitares, capacidad_rR)
+                    cont = 0
+                    suax = 0
+                    suay = 0
+                    # for x in listicaMilitares:
+                    #     if cont == 0:
+                    #         # print('Fila: ' + x)
+                    #         if yRecurso == x:
+                    #             sua = 1
+                    #             filaw = x
+                    #         cont += 1
+                    #     elif cont == 1:
+                    #         # print('Columna: ' + x)
+                    #         if xRecurso == x:
+                    #             sua = 1 
+                    #             columnaw = x
+                    #         cont += 1
+                    #     elif cont == 2:
+                    #         if suax == 1 and suay == 1:
+                    #             print('Capacidad: '+ x)
+                    #             if 
+
+                    #         print('')
+                    #         cont = 0
+
+                    #         capacidad_enemigos_global += int(x)
+                    
 
                 
             elif parC == 'impar':
@@ -357,11 +384,6 @@ def menu():
                 xCivil = input("ingrese x: ")
                 yCivil = input("ingrese y: ")
                 print('')
-                # envio entradas x & y tambien enviar final xcivli, xcivil
-                # xEntrada = int(xEntrada)
-                # yEntrada = int(yEntrada)
-                # xCivil = int(xCivil)
-                # yCivil = int(yCivil)
 
                 algoritmo.hacerMatrix(todo_papa, xEntrada, yEntrada, xCivil, yCivil, filas , columnas)
 
