@@ -289,7 +289,7 @@ def hacerMatrix2(todo_papa, xEntrada, yEntrada, xFinaL, yFinal, filas, columnas)
                 x = 1
                 trra += "1 "
             elif x == 'C':
-                x = 0
+                x = 1
                 trra += "1 "
             # temp.append(x)
             cuaT[contador] = trra.rstrip()
@@ -357,11 +357,14 @@ def hacerMatrix3(todo_papa, xEntrada, yEntrada, xFinaL, yFinal, filas, columnas,
                             sua2 = 1
                         cont +=1
                     elif cont == 2:
-                        if sua1 == 1 and sua2 == 1 and int(pa) < capacidad_rR:
-                            trra += "1 "
-                        else:
+                        if int(capacidad_rR) < int(pa):
                             trra += "0 "
-
+                            capacidad_rR = int(capacidad_rR) - int(pa)
+                        else:
+                            trra += "1 "
+                            sua1 = 0
+                            sua1 = 0
+                       
                             
                         cont = 0
                     
