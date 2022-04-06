@@ -241,6 +241,7 @@ def menu():
             """"""
             listicaMilitares = militares[:-1].split('L')
             cont = 0
+            capacidad_enemigos_global = 0
             print('Unidades Militares en la Ciudad')
             for x in listicaMilitares:
                 if cont == 0:
@@ -253,6 +254,8 @@ def menu():
                     print('Capacidad: '+ x)
                     print('')
                     cont = 0
+
+                    capacidad_enemigos_global += int(x)
             """"""
             # print(todo_papa)
             # print(unidadesTexto)
@@ -333,7 +336,20 @@ def menu():
             # Fighter o Salvador
             if parC == 'par':
                 # enviar capacidad_rR
-                print()
+                buscarRecursos(todo_papa)
+                print('Ingrese las Coordenas del Recurso a rescatar: ')
+                xRecurso = input("ingrese x: ")
+                yRecurso = input("ingrese y: ")
+                print('')
+
+                if int(capacidad_rR) >= capacidad_enemigos_global:
+                    print('SI')
+                    algoritmo.hacerMatrix2(todo_papa, xEntrada, yEntrada, xRecurso, yRecurso, filas , columnas)
+
+                else:
+                    print('NO')
+
+                
             elif parC == 'impar':
                 # enviar capacidad_rR con 0
                 buscarCiviles(todo_papa)
@@ -403,7 +419,7 @@ def buscarEntradas(todo_papa):
                 xcua = x
                 ycua = y
           
-                print('Entradas: '+ xi)  
+                print('ENTRADA: '+ xi)  
                 print('x: '+str(xcua)+' y: '+str(ycua))
 
                 x+=1
@@ -438,7 +454,7 @@ def buscarCiviles(todo_papa):
                 xcua = x
                 ycua = y
           
-                print('CIVILES: '+ xi)  
+                print('CIVIL: '+ xi)  
                 print('x: '+str(xcua)+' y: '+str(ycua))
 
                 x+=1
@@ -449,6 +465,37 @@ def buscarCiviles(todo_papa):
         y += 1
 
      
+def buscarRecursos(todo_papa):
+    x = 0
+    y = 0
+    xcua = 0
+    ycua = 0
+    for cosas in todo_papa:
+        
+        for xi in cosas:
+            if xi == '*':
+                pass
+            elif xi == ' ':
+                pass
+            elif xi == 'M':
+                pass
+            elif xi == 'C':
+                pass
+            elif xi == 'E':
+                pass
+            elif xi == 'R':
+                xcua = x
+                ycua = y
+          
+                print('RECURSO: '+ xi)  
+                print('x: '+str(xcua)+' y: '+str(ycua))
+
+                x+=1
+
+
+            x += 1
+        x=0       
+        y += 1
 
 
 
